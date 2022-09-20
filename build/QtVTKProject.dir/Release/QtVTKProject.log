@@ -1,0 +1,7 @@
+﻿  Automatic MOC and UIC for target QtVTKProject
+  mocs_compilation_Release.cpp
+  MainWindow.cpp
+  dicomwidget.cpp
+  main.cpp
+  Generating Code...
+  QtVTKProject.vcxproj -> E:\softwares\qt\QtVTKProject\build\Release\QtVTKProject.exe

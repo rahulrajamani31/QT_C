@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\softwares\qt\QtVTKProject\src\MainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\softwares\qt\QtVTKProject\src\dicomwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\softwares\qt\QtVTKProject\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\include\MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\include\dicomwidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\include_Debug\forms\ui_MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\include_Debug\forms\ui_dicomwidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\include_Release\forms\ui_MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\include_Release\forms\ui_dicomwidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\include_MinSizeRel\forms\ui_MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\include_MinSizeRel\forms\ui_dicomwidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\include_RelWithDebInfo\forms\ui_MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\include_RelWithDebInfo\forms\ui_dicomwidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\softwares\qt\QtVTKProject\build\CMakeFiles\267a7246b85858f4a1946afb606fd13b\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\softwares\qt\QtVTKProject\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\softwares\qt\QtVTKProject\forms\MainWindow.ui" />
+    <None Include="E:\softwares\qt\QtVTKProject\forms\dicomwidget.ui" />
+    <None Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\autouic_Debug.stamp" />
+    <None Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\autouic_Release.stamp" />
+    <None Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="E:\softwares\qt\QtVTKProject\build\QtVTKProject_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{BE1F820E-A108-3062-9633-CC40EB6BDC26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{FC546069-9B9E-35E0-8631-E3F2A45826F3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{237CCA3D-430E-3346-AB74-B24EAB7A18DB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

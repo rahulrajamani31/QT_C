@@ -1,0 +1,9 @@
+﻿  Checking Build System
+  CMake is re-running because E:/softwares/qt/QtVTKProject/build/CMakeFiles/generate.stamp is out-of-date.
+    the file 'E:/softwares/qt/QtVTKProject/CMakeLists.txt'
+    is newer than 'E:/softwares/qt/QtVTKProject/build/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  -- Selecting Windows SDK version 10.0.20348.0 to target Windows 10.0.19044.
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/softwares/qt/QtVTKProject/build

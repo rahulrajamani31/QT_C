@@ -1,0 +1,22 @@
+^E:\SOFTWARES\QT\QTVTKPROJECT\BUILD\CMAKEFILES\267A7246B85858F4A1946AFB606FD13B\AUTOUIC_(CONFIG).STAMP.RULE
+setlocal
+cd E:\softwares\qt\QtVTKProject\build
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\SOFTWARES\QT\QTVTKPROJECT\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/softwares/qt/QtVTKProject -BE:/softwares/qt/QtVTKProject/build --check-stamp-file E:/softwares/qt/QtVTKProject/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
