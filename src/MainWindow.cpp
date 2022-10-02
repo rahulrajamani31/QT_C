@@ -35,11 +35,12 @@ void MainWindow::drawDICOMSeries(std::string folderDICOM) {
 
       auto widget = new DicomWidget(this);
 
-      widget->setImage(filename.filePath() , filename.fileName() );
+      widget->setImage(filename.filePath() , filename.fileName() , false );
      ui->listWidget->setFlow(QListView::Flow::LeftToRight);
 //      item->set SizeHint(widget->sizeHint());
-      item->setSizeHint(QSize(300, widget->sizeHint().height()));
+      item->setSizeHint(QSize(400, widget->sizeHint().height()));
       ui->listWidget->addItem(item);
+      //change g
       ui->listWidget->setSizeIncrement(200, 200);
       ui->listWidget->setItemWidget(item, widget);
     }
@@ -52,7 +53,6 @@ void MainWindow::drawDICOMSeries(std::string folderDICOM) {
     ui->treeView->setRootIndex(idx);
     ui->treeView->hideColumn(1);
     ui->treeView->hideColumn(2);
-
     ui->treeView->hideColumn(3);
     currentFileDI = dirModel->filePath(idx);
     reader->SetDirectoryName(folderDICOM.c_str());
@@ -63,40 +63,52 @@ void MainWindow::drawDICOMSeries(std::string folderDICOM) {
 
 
 
-void MainWindow::drawDICOMImg(std::string fileDICOM)
-{
-    vtkSmartPointer<vtkDICOMImageReader> reader =
-        vtkSmartPointer<vtkDICOMImageReader>::New();
-      reader->SetFileName(fileDICOM.c_str());
-      reader->Update();
+//void MainWindow::drawDICOMImg(std::string fileDICOM)
+//{
+//    vtkSmartPointer<vtkDICOMImageReader> reader =
+//        vtkSmartPointer<vtkDICOMImageReader>::New();
+//      reader->SetFileName(fileDICOM.c_str());
+//      reader->Update();
 
-      vtkSmartPointer<vtkImageViewer2> imageViewer =
-        vtkSmartPointer<vtkImageViewer2>::New();
-      imageViewer->SetInputConnection(reader->GetOutputPort());
-      imageViewer->SetRenderWindow(ui->qvtkWidget->GetRenderWindow());
-      imageViewer->Render();
-}
+//      vtkSmartPointer<vtkImageViewer2> imageViewer =
+//        vtkSmartPointer<vtkImageViewer2>::New();
+//      imageViewer->SetInputConnection(reader->GetOutputPort());
+//      imageViewer->SetRenderWindow(ui->qvtkWidget->GetRenderWindow());
+//      imageViewer->Render();
+//}
 
 void MainWindow::currentChanged(const QModelIndex &index)
 {
 
     QFileSystemModel* fileSystem = new QFileSystemModel();
-    QFileInfo myPath = fileSystem->fileInfo(index);
+        QFileInfo myPath = fileSystem->fileInfo(index);
 
-    std::string fileDICOM = myPath.filePath().toUtf8().constData();
+        auto widget = new DicomWidget(this);
+         widget->setImage(myPath.filePath() , myPath.fileName() , true);
 
-    qDebug()<<"My path"<< myPath;
-    vtkSmartPointer<vtkDICOMImageReader> reader =
-        vtkSmartPointer<vtkDICOMImageReader>::New();
-      reader->SetFileName(fileDICOM.c_str());
-      reader->Update();
+             QLayoutItem* item = ui->frame->layout()->takeAt(0);
+             delete item->widget();
+             delete item;
 
-      vtkSmartPointer<vtkImageViewer2> imageViewer =
-        vtkSmartPointer<vtkImageViewer2>::New();
-      imageViewer->SetInputConnection(reader->GetOutputPort());
-      imageViewer->SetRenderWindow(ui->qvtkWidget->GetRenderWindow());
+         ui->frame->layout()->addWidget(widget);
 
-      imageViewer->Render();
+//    QFileSystemModel* fileSystem = new QFileSystemModel();
+//    QFileInfo myPath = fileSystem->fileInfo(index);
+
+//    std::string fileDICOM = myPath.filePath().toUtf8().constData();
+//    ui->diLabel->setText("Single View - " + myPath.fileName());
+//    qDebug()<<"My path"<< myPath;
+//    vtkSmartPointer<vtkDICOMImageReader> reader =
+//        vtkSmartPointer<vtkDICOMImageReader>::New();
+//      reader->SetFileName(fileDICOM.c_str());
+//      reader->Update();
+
+//      vtkSmartPointer<vtkImageViewer2> imageViewer =
+//        vtkSmartPointer<vtkImageViewer2>::New();
+//      imageViewer->SetInputConnection(reader->GetOutputPort());
+//      imageViewer->SetRenderWindow(ui->qvtkWidget->GetRenderWindow());
+
+//      imageViewer->Render();
 
 }
 
@@ -113,14 +125,17 @@ void MainWindow::on_listWidget_doubleClicked(const QModelIndex &index)
 }
 
 
-void MainWindow::on_pushButton_2_clicked()
+
+
+void MainWindow::on_actionSingle_View_triggered()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+     ui->stackedWidget->setCurrentIndex(0);
 }
 
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_actionMulti_View_triggered()
 {
+
      ui->stackedWidget->setCurrentIndex(1);
 }
 

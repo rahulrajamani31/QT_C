@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>273</width>
-    <height>163</height>
+    <width>1240</width>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,17 +15,29 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QSplitter" name="splitter">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
+    <widget class="QLabel" name="diLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <widget class="QVTKWidget" name="diWidget" native="true"/>
-     <widget class="QLabel" name="diLabel">
-      <property name="text">
-       <string>imageLabel</string>
-      </property>
-     </widget>
+     <property name="styleSheet">
+      <string notr="true">font: 900 10pt &quot;Segoe UI Black&quot;;
+background-color: rgb(111, 253, 255);
+width:400px;
+height:100px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;</string>
+     </property>
+     <property name="text">
+      <string>imageLabel</string>
+     </property>
     </widget>
+   </item>
+   <item>
+    <widget class="QVTKWidget" name="diWidget" native="true"/>
    </item>
   </layout>
  </widget>

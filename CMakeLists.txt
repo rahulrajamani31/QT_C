@@ -7,6 +7,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_PREFIX_PATH $ENV{QTDIR})
+
 find_package(OpenGL)
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Gui REQUIRED)
@@ -33,6 +34,7 @@ file(GLOB_RECURSE SOURCES
     "${FORMS_DIR}/*.ui"
     "${INCLUDE_DIR}/*.h"
     "${SOURCE_DIR}/*.cpp"
+#    "*.qrc"
 )
 
 # Add the forms directory to the AUTOUIC search paths
@@ -40,7 +42,7 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_AUTOUIC_SEARCH_PATHS} ${FORMS_DIR})
 
 # Add the executable
 if (WIN32) 
-    add_executable(QtVTKProject WIN32 ${SOURCES})
+    add_executable(QtVTKProject WIN32 ${SOURCES} )
 elseif(UNIX)
     add_executable(QtVTKProject ${SOURCES})
 endif()

@@ -1,10 +1,6 @@
 #include "dicomwidget.h"
 #include "ui_dicomwidget.h"
-#include <QDebug>
-#include <QFileDialog>
-#include <QFileSystemModel>
-#include <QTreeWidgetItem>
-#include <QMimeDatabase>
+
 
 
 DicomWidget::DicomWidget(QWidget *parent) :
@@ -15,10 +11,17 @@ DicomWidget::DicomWidget(QWidget *parent) :
 
 }
 
-void DicomWidget::setImage(const QString &text , const QString label) {
+void DicomWidget::setImage(const QString &text , const QString label , const bool isTrue) {
    // ui->diWidget->setImage(text);
-    std::string fileDICOM = text.toUtf8().constData();
-      ui->diLabel->setText(label);
+     std::string fileDICOM = text.toUtf8().constData();
+    if(isTrue){
+        ui->diLabel->setText("Single view - " +label);
+    }
+    else{
+        ui->diLabel->setText("Multi view - " +label);
+    }
+
+
       ui->diWidget->setWhatsThis(text);
     qDebug()<<"My path"<< text;
     vtkSmartPointer<vtkDICOMImageReader> reader =
@@ -37,7 +40,19 @@ QString DicomWidget::getText() {
     return ui->diWidget->whatsThis();
 }
 
+void DicomWidget::mouseDoubleClickEvent(QMouseEvent *event){
+    qDebug() << ui->diWidget->whatsThis();
+    QString path = ui->diWidget->whatsThis();
+    EditWindow * editWindow = new EditWindow(this);
+    editWindow->setWindowTitle(path);
+    editWindow->setWhatsThis(path);
+    editWindow->show();
+}
+
 DicomWidget::~DicomWidget()
 {
     delete ui;
 }
+
+
+

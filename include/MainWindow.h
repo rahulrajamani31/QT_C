@@ -24,14 +24,16 @@ private slots:
     void openDICOMFolder();
     void drawDICOMSeries(std::string folderDICOM);
 
-    void drawDICOMImg(std::string fileDICOM);
+//    void drawDICOMImg(std::string fileDICOM);
     void on_pushButton_clicked();
     void currentChanged(const QModelIndex & );
     void on_listWidget_doubleClicked(const QModelIndex &index);
 
-    void on_pushButton_2_clicked();
 
-    void on_pushButton_3_clicked();
+
+    void on_actionSingle_View_triggered();
+
+    void on_actionMulti_View_triggered();
 
 private:
     Ui::MainWindow *ui;
